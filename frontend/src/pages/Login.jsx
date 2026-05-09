@@ -23,7 +23,7 @@ export default function Login({ isLogin }) {
       } else {
         const { error } = await supabase.auth.signUp({ email, password });
         if (error) throw error;
-        addToast('Account created successfully!', 'success');
+        addToast('Account created! Please check your email to confirm.', 'success');
         navigate('/login');
       }
     } catch (err) {
