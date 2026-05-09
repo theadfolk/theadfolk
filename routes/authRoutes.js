@@ -55,10 +55,12 @@ const { encryptToken } = require('../services/cryptoService');
       return res.status(403).json({ error: 'Failed to save tokens. Make sure you use the SUPABASE_SERVICE_ROLE_KEY in .env to bypass RLS in the backend.' });
     }
 
-    res.json({ success: true, message: 'Gmail connected successfully. You can close this window.' });
+    const frontendUrl = process.env.FRONTEND_URL || 'http://localhost:5173';
+    res.redirect(`${frontendUrl}/dashboard`);
   } catch (error) {
     console.error('OAuth error:', error);
-    res.status(500).json({ error: 'Authentication failed' });
+    const frontendUrl = process.env.FRONTEND_URL || 'http://localhost:5173';
+    res.redirect(`${frontendUrl}/login?error=auth_failed`);
   }
 });
 
