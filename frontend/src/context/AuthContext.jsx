@@ -20,7 +20,7 @@ export function AuthProvider({ children }) {
 
   // Setup an Axios instance that automatically attaches the token
   const api = axios.create({
-    baseURL: '/api',
+    baseURL: import.meta.env.VITE_API_URL || '',
   });
 
   api.interceptors.request.use(async (config) => {

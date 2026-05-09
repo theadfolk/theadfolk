@@ -8,8 +8,10 @@ export default function ConnectGmail() {
 
   const handleConnect = () => {
     setLoading(true);
-    // Redirect to the relative API endpoint which Vercel/Vite will proxy
-    window.location.href = `/api/auth/google?userId=${user.id}`;
+    // Determine the backend API URL. In dev with proxy it's just /auth, but here we redirect the full window
+    // so we should use the VITE_API_URL directly.
+    const apiUrl = import.meta.env.VITE_API_URL || '';
+    window.location.href = `${apiUrl}/auth/google?userId=${user.id}`;
   };
 
   return (
