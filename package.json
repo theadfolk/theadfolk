@@ -2,7 +2,6 @@
   "name": "brand-deal-tracker",
   "version": "1.0.0",
   "description": "The Ad Folk - Brand Deal Tracker for Creators",
-  "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "dev": "node server.js",
