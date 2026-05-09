@@ -4,8 +4,7 @@
   "description": "The Ad Folk - Brand Deal Tracker for Creators",
   "scripts": {
     "start": "node server.js",
-    "dev": "node server.js",
-    "build": "cd frontend && npm install && npm run build && cd .. && rm -rf public && mv frontend/dist public"
+    "dev": "node server.js"
   },
   "engines": {
     "node": ">=18.0.0"
