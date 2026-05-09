@@ -1,4 +1,5 @@
 import React from 'react';
+export { Button } from './Button';
 
 // Badge Component
 export function Badge({ children, variant = 'default', icon: Icon }) {
